@@ -12,7 +12,7 @@ This repository contains all the input files and simulation scripts needed to re
 
 Contains input files for simulations that start from motif 3-3.
 
-1. start_3-6/
+2. start_3-6/
 
 
 Contains input files for simulations that start from motif 3-6.
@@ -25,17 +25,13 @@ mdp/: Contains the GROMACS .mdp files.
 
 
 
-Structure:
-
-mdp/: Contains the GROMACS .mdp files.
-0/, 1/, 2/, ..., 23/: These folders include the PLUMED input files (plumed files) and GROMACS .tpr files.
 
 
 3. plumed/
 
 
 Contains all PLUMED input files used in the simulations.
-File naming convention: plumed-CVs-temperature-range.dat.
+File naming convention: plumed-CVs.dat.
 
 
 Coordinate and Topology Files
