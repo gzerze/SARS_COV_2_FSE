@@ -1,0 +1,54 @@
+#!/bin/csh -f 
+
+# T-rex starting from an unfolded structure (from high T runs in Trex starting from folded)
+#source /data/jeetain/PROGRAMS/Gromacs-4.0.5/bin/GMXRC.csh
+
+#module load intel/19.0/64/19.0.1.144 rh/devtoolset/7 intel-mkl/2020.1/1/64 intel-mpi/intel/2019.1/64 cudatoolkit/10.2 intel/19.1/64/19.1.1.217
+#source /home/hzerze/PROGRAMS/plumed2-master/sourceme.sh
+
+set pARRAY = ( rna )
+
+set j = 1
+while ( $j < 2 )
+
+set proot = "$pARRAY[$j]"
+
+echo $proot
+
+set ff = deshaw
+set s = 1
+#set ff = $argv[1]
+#set s = $argv[1]
+#set proot = 2kdl
+#set ff = amber03d
+set i = 0
+
+while ( $i < 24 ) 
+
+	set fileroot = "${proot}_${ff}"
+        echo $fileroot
+	set this = "mcmu"
+
+	if ( $s == 1 ) then 
+		set mdp = "mdp/trex_cont${i}.mdp"
+                echo $mdp
+                echo $fileroot
+		#set gro = "${i}.gro"
+		set gro = "data/gro/${fileroot}_390_pr.gro" 
+	endif
+
+	# 32 rep
+	#
+	mkdir $i
+	~/PROGRAMS/gromacs-2021.4/exec/bin/gmx_gpu grompp -v -f $mdp \
+		-c $gro -maxwarn 1 \
+		-o ${i}/${fileroot}_${this}_nd.tpr \
+		-p topol.top
+
+	@ i++
+end
+
+rm \#*
+@ j++
+
+end
