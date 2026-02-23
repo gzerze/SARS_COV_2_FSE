@@ -30,7 +30,7 @@ mdp/: Contains the GROMACS .mdp files.
 3. plumed/
 
 
-Contains all PLUMED input files used in the simulations.
+Contains all PLUMED input files used simulations and analysis.
 File naming convention: plumed-CVs.dat.
 
 
