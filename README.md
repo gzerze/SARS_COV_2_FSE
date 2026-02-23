@@ -10,11 +10,11 @@ source "/home/username/PROGRAMS/plumed2-v2.8/sourceme.sh
 application="/home/username/PROGRAMS/gromacs-2021.4/exec/bin/gmx_gpu mdrun"
 
 # Define number of walkers
-ng=8
+ng=24
 
 
 # Define variables related to RNA and ff
-proot="pk1"
+proot="rna"
 ff="deshaw"
 fileroot="${proot}_${ff}"
 this="opes"
