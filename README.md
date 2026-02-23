@@ -1,5 +1,5 @@
 # MM-OPES_for_SARS_COV_2_FSE
-#"Asymmetric transition pathways govern the conformational landscape of the SARS-CoV-2 frameshifting stimulatory element"
+"Asymmetric transition pathways govern the conformational landscape of the SARS-CoV-2 frameshifting stimulatory element"
 
 
 
